@@ -32,7 +32,7 @@ const   HeaderSlider = ({ autoSlide = false, autoSlideInterval = 1000 }) => {
     <div className="overflow-hidden relative w-full">
       {/* Slides Container */}
       <div
-        className="flex transition-transform mt-[66px] ease-out duration-500"
+        className="flex transition-transform  ease-out duration-500"
         style={{ transform: `translateX(-${curr * 100}%)` }}
       >
         {slides.map((item, index) => (
