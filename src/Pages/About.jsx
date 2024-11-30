@@ -3,14 +3,14 @@ import React from 'react'
 
 const About = () => {
   return (
-    <div>
+    <div  >
       
-      <div className='text-center text-2xl pt-10 text-gray-500'>
+      <div className='text-center text-2xl   pt-10 text-gray-500'>
         <p>ABOUT <span className='text-gray-700 font-semibold'>US</span></p>
       </div>
 
-      <div className='my-10 flex flex-col md:flex-row gap-12'>
-        <img className='w-full md:max-w-[360px]' src={assets.about_image} alt="" />
+      <div className='my-10 flex flex-col  md:flex-row gap-12'>
+        <img className='w-full md:max-w-[360px]' src="" alt="" />
         <div className='flex flex-col justify-center gap-6 md:w-2/4 text-sm text-gray-600'>
           <p>Welcome to Prescripto, your trusted partner in managing your healthcare needs Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto fugiat autem cupiditate, accusamus labore cumque.</p>
           <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo eius, possimus, est excepturi non dolor magnam numquam dolorum aperiam vero dolores libero inventore magni tempora! Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum sunt amet error sequi tempore quam neque accusamus consequatur expedita a?</p>
