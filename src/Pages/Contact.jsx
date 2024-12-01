@@ -1,106 +1,99 @@
-import React, { useState } from "react";
+
+
+
+import React from 'react';
+import { FaFacebook, FaTwitter, FaInstagram, FaPhone, FaEnvelope, FaMapMarkerAlt, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Submitted Contact Form Data:", formData);
-    alert("Your message has been submitted successfully!");
-    // Add your form submission logic here
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      message: "",
-    });
-  };
-
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-lg max-w-lg w-full">
-        <h2 className="text-3xl font-bold mb-6 text-gray-800 text-center">Contact Us</h2>
-        <form onSubmit={handleSubmit}>
-          <div className="mb-4">
-            <label htmlFor="name" className="block text-gray-700 font-medium mb-2">
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              placeholder="Enter your name"
-              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              required
-            />
+    <div className="flex items-center justify-center min-h-screen bg-white">
+      {/* Contact Card */}
+      <div className="w-full max-w-4xl bg-orange-500  text-white rounded-lg shadow-lg p-8">
+        <div className="flex flex-col sm:flex-row">
+          {/* Left Section */}
+          <div className="sm:w-1/2 w-full space-y-6">
+            <h2 className="text-3xl font-bold">Contact Us</h2>
+            <p className="text-lg">We'd love to hear from you!</p>
+
+            <div className="space-y-4">
+              {/* Email */}
+              <div className="flex items-center gap-4">
+                <FaEnvelope className="text-xl" />
+                <p> info@mrpurohit.com </p>
+              </div>
+
+              {/* Phone */}
+              <div className="flex items-center gap-4">
+                <FaPhone className="text-xl" />
+                <p> +91 74850 35644 </p>
+              </div>
+
+              {/* Location */}
+              <div className="flex items-center gap-4">
+                <FaMapMarkerAlt className="text-xl" />
+                <p>123 Street Name, City, Country</p>
+              </div>
+            </div>
+
+            {/* Social Media Icons */}
+            <div className="flex gap-4 mt-4">
+              <a href="https://www.linkedin.com/company/mrpurohit/" target="_blank" rel="noreferrer" className="hover:text-blue-800">
+                <FaLinkedinIn className="text-2xl" />
+              </a>
+              <a href="https://x.com/_mrpurohit" target="_blank" rel="noreferrer" className="hover:text-blue-400">
+                <FaTwitter className="text-2xl" />
+              </a>
+              <a href="https://www.instagram.com/mrpurohitofficial" target="_blank" rel="noreferrer" className="hover:text-pink-500">
+                <FaInstagram className="text-2xl" />
+              </a>
+              <a href="https://youtube.com/@mrpurohitofficial" target="_blank" rel="noreferrer" className="hover:text-pink-500">
+                <FaYoutube className="text-2xl" />
+              </a>
+            </div>
           </div>
-          <div className="mb-4">
-            <label htmlFor="email" className="block text-gray-700 font-medium mb-2">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="Enter your email"
-              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              required
-            />
+
+          {/* Right Section - Form */}
+          <div className="sm:w-1/2 w-full bg-white text-black rounded-lg p-6 shadow-lg mt-8 sm:mt-0 sm:ml-6">
+            <form>
+              <div className="mb-4">
+                <label htmlFor="name" className="block font-semibold mb-2">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-orange-500"
+                  placeholder="Enter your name"
+                />
+              </div>
+
+              <div className="mb-4">
+                <label htmlFor="email" className="block font-semibold mb-2">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-orange-500"
+                  placeholder="Enter your email"
+                />
+              </div>
+
+              <div className="mb-4">
+                <label htmlFor="message" className="block font-semibold mb-2">Message</label>
+                <textarea
+                  id="message"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-orange-500"
+                  placeholder="Enter your message"
+                  rows="5"
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="w-full bg-orange-500 text-white font-bold py-3 rounded-lg hover:bg-orange-600 transition"
+              >
+                Send Message
+              </button>
+            </form>
           </div>
-          <div className="mb-4">
-            <label htmlFor="phone" className="block text-gray-700 font-medium mb-2">
-              Phone Number
-            </label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              placeholder="Enter your phone number"
-              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label htmlFor="message" className="block text-gray-700 font-medium mb-2">
-              Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              placeholder="Write your message here"
-              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              rows="4"
-              required
-            ></textarea>
-          </div>
-          <button
-            type="submit"
-            className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300"
-          >
-            Submit
-          </button>
-        </form>
+        </div>
       </div>
     </div>
   );
