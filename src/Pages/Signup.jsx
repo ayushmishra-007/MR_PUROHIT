@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import apis from "../Utils/apis";
+import toast from 'react-hot-toast';
 const Signup = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -18,11 +19,40 @@ const Signup = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Signup Data:", formData);
+    const { name, email, password } = formData;
+    try {
+      const response = await fetch(apis().signupUser, {
+        method: "POST",
+        body: JSON.stringify({ name, email, password }),
+        headers: { 'Content-Type': 'application/json' }
+      })
+      const result = await response.json()
+      if (!response.ok) {
+        throw new Error(result?.message)
+      }
+      if (result?.status) {
+        toast.success(result?.message)
+        console.log(result?.message)
+        navigate("/login");
+      }
+      console.log('/login')
+    } catch (error) {
+      let errorMessage = error.message;
+
+      // Customize error messages for specific cases
+      if (error.message.includes("<!DOCTYPE")) {
+        errorMessage = "User already exist";
+      } else if (error.message === "Failed to fetch") {
+        errorMessage = "Unable to connect to the server. Please check your internet connection.";
+      }
+
+      toast.error(errorMessage);
+      console.error("Error:", error.message); // For debugging in console
+    }
     // Signup data submission logic here
-    navigate("/login"); // Navigate to Login page after signup
+
   };
 
   return (
@@ -97,3 +127,5 @@ const Signup = () => {
 };
 
 export default Signup;
+
+
