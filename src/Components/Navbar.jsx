@@ -16,7 +16,7 @@ const Navbar = () => {
   const closeMenu = () => setIsOpen(false);
 
   return (
-    <div className="flex justify-between items-center h-[60px] shadow-lg fixed w-full px-4 md:px-20 text-white z-10 bg-orange-400">
+    <div className="flex justify-between items-center h-[60px] shadow-lg  w-full px-4 md:px-20 text-white z-10 bg-orange-400">
     <div className="font-bold">
       <h1>Mr. PUROHIT</h1>
     </div>
