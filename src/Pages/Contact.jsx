@@ -8,12 +8,12 @@ const Contact = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-white">
       {/* Contact Card */}
-      <div className="w-full max-w-4xl bg-orange-500  text-white rounded-lg shadow-lg p-8">
+      <div className="w-full max-w-4xl bg-orange-500  text-white rounded-2xl shadow-lg p-8">
         <div className="flex flex-col sm:flex-row">
           {/* Left Section */}
           <div className="sm:w-1/2 w-full space-y-6">
             <h2 className="text-3xl font-bold">Contact Us</h2>
-            <p className="text-lg">We'd love to hear from you!</p>
+            <p className="text-lg">At Mr. Purohit, we believe that spirituality is a journey that grows richer with the right resources and guidance. Join us as we honor Sanatan Dharma, preserve its beauty, and make it a part of every household.</p>
 
             <div className="space-y-4">
               {/* Email */}
@@ -31,7 +31,7 @@ const Contact = () => {
               {/* Location */}
               <div className="flex items-center gap-4">
                 <FaMapMarkerAlt className="text-xl" />
-                <p>123 Street Name, City, Country</p>
+                <p>4th floor TMPC Building, Golden George Nagar, Mogappair West, Maduraivoyal, Chennai, Tamil Nadu 600107</p>
               </div>
             </div>
 
