@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../Context/AppContext';
 import { motion } from 'framer-motion';
+import { section } from 'framer-motion/client';
 
 const Ourteam = () => {
   const { ourTeam } = useContext(AppContext);
@@ -12,9 +13,10 @@ const Ourteam = () => {
   };
 
   return (
-    <div>
+
+    <div >
       <p className="text-center text-gray-900 text-lg font-medium mt-2">OUR TEAM</p>
-      <div className="w-full max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-5 px-4">
+      <div className="w-full   grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pt-5 px-4">
         {
           ourTeam.map((item, index) => (
             <motion.div
@@ -45,6 +47,7 @@ const Ourteam = () => {
         }
       </div>
     </div>
+
   );
 };
 
